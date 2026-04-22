@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>サステナ経営塾 第22期 | 10カ月でサステナビリティを極める</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0B3B2E;
+    --ink-soft: #1A4F3F;
+    --paper: #F5F1E8;
+    --paper-warm: #ECE5D3;
+    --paper-dark: #E0D6BE;
+    --terracotta: #C87A4A;
+    --terracotta-dark: #A5613A;
+    --gold: #B8934A;
+    --red: #8B2820;
+    --charcoal: #1E1E1C;
+    --mist: rgba(11, 59, 46, 0.08);
+    --font-display: 'Fraunces', 'Shippori Mincho', serif;
+    --font-body: 'DM Sans', 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-jp-serif: 'Shippori Mincho', 'Fraunces', serif;
+    --font-jp-sans: 'Zen Kaku Gothic New', 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-jp-sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Noise texture overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 22px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 241, 232, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(11, 59, 46, 0.08);
+  }
+
+  .nav-brand {
+    font-family: var(--font-jp-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-brand-mark {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    padding: 4px 0;
+    transition: opacity 0.3s;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--terracotta);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 26px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid var(--ink);
+  }
+
+  .nav-cta:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 48px 80px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  @media (max-width: 1000px) {
+    .hero { padding: 110px 24px 60px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .hero-meta {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+
+  .hero-meta::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .hero-title {
+    font-family: var(--font-jp-serif);
+    font-size: clamp(48px, 7vw, 104px);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 1s 0.25s forwards;
+  }
+
+  .hero-title .accent {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  .hero-title .period {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    margin-left: 4px;
+    transform: translateY(-8px);
+  }
+
+  .hero-lead {
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 540px;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 1s 0.4s forwards;
+  }
+
+  .hero-lead strong {
+    color: var(--ink);
+    font-weight: 700;
+    background: linear-gradient(180deg, transparent 62%, rgba(200, 122, 74, 0.25) 62%);
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s 0.55s forwards;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 40px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--ink);
+  }
+
+  .btn-primary:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(200, 122, 74, 0.25);
+  }
+
+  .btn-primary::after {
+    content: '→';
+    font-size: 16px;
+    transition: transform 0.3s;
+  }
+
+  .btn-primary:hover::after { transform: translateX(4px); }
+
+  .btn-secondary {
+    color: var(--ink);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--ink);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    color: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+
+  /* Hero side card */
+  .hero-side {
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s 0.6s forwards;
+  }
+
+  .quote-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px 40px;
+    border-radius: 4px;
+    position: relative;
+    transform: rotate(1.5deg);
+    box-shadow: 20px 24px 0 var(--terracotta);
+  }
+
+  .quote-mark {
+    font-family: var(--font-display);
+    font-size: 120px;
+    line-height: 0.6;
+    color: var(--terracotta);
+    font-style: italic;
+    position: absolute;
+    top: 28px;
+    left: 28px;
+  }
+
+  .quote-text {
+    font-family: var(--font-jp-serif);
+    font-size: 19px;
+    line-height: 1.9;
+    margin-top: 48px;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .quote-attribution {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    padding-top: 20px;
+    border-top: 1px solid rgba(245, 241, 232, 0.25);
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .hero-stats {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(11, 59, 46, 0.15);
+  }
+
+  .hero-stat .num {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-stat .num .small {
+    font-size: 18px;
+    margin-left: 2px;
+  }
+
+  .hero-stat .label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  /* Marquee of company names */
+  .marquee {
+    position: relative;
+    padding: 32px 0;
+    background: var(--ink);
+    color: var(--paper-warm);
+    overflow: hidden;
+    border-top: 1px solid rgba(245, 241, 232, 0.1);
+    border-bottom: 1px solid rgba(245, 241, 232, 0.1);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 60px;
+    animation: marquee 50s linear infinite;
+    white-space: nowrap;
+    font-family: var(--font-jp-serif);
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+    color: var(--paper);
+  }
+
+  .marquee-item::after {
+    content: '◆';
+    color: var(--terracotta);
+    font-size: 12px;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ===== VIDEO SECTION ===== */
+  .video-section {
+    background: var(--paper);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 48px;
+    position: relative;
+  }
+
+  @media (max-width: 900px) {
+    .video-section { padding: 80px 24px; }
+  }
+
+  .video-wrapper {
+    position: relative;
+    margin-top: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(11, 59, 46, 0.18);
+    background: var(--ink);
+  }
+
+  .video-frame {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+
+  .video-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .video-caption-label {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--terracotta);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .video-caption-meta {
+    font-family: var(--font-display);
+    opacity: 0.65;
+    font-size: 12px;
+  }
+
+  .video-audio-link {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 8px 18px;
+    border: 1px solid rgba(245, 241, 232, 0.3);
+    border-radius: 100px;
+    transition: all 0.3s;
+  }
+
+  .video-audio-link:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+
+  /* ===== INFOGRAPHIC SECTION ===== */
+  .infographic-section {
+    background: var(--paper-warm);
+    max-width: 100%;
+    padding: 140px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    .infographic-section { padding: 80px 24px; }
+  }
+
+  .infographic-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .infographic-image-wrapper {
+    position: relative;
+    margin-top: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(11, 59, 46, 0.15);
+    background: var(--paper);
+  }
+
+  .infographic-image {
+    width: 100%;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.4s;
+  }
+
+  .infographic-image:hover {
+    transform: scale(1.005);
+  }
+
+  .infographic-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ===== DOWNLOAD SECTION ===== */
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+  }
+
+  @media (max-width: 900px) {
+    .download-grid { grid-template-columns: 1fr; }
+  }
+
+  .download-card {
+    background: var(--paper-warm);
+    padding: 40px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--terracotta);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .download-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-4px);
+  }
+
+  .download-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .download-card:hover .dl-meta,
+  .download-card:hover .dl-desc {
+    color: var(--paper-warm);
+  }
+
+  .dl-icon {
+    width: 54px;
+    height: 54px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+  }
+
+  .dl-type {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--terracotta);
+    text-transform: uppercase;
+  }
+
+  .dl-title {
+    font-family: var(--font-jp-serif);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .dl-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+
+  .dl-meta {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    font-family: var(--font-display);
+    padding-top: 16px;
+    border-top: 1px solid rgba(11, 59, 46, 0.15);
+  }
+
+  .download-card:hover .dl-meta {
+    border-color: rgba(245, 241, 232, 0.2);
+  }
+
+  .dl-cta {
+    margin-top: 12px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .dl-cta::after {
+    content: '↓';
+    transition: transform 0.3s;
+  }
+
+  .download-card:hover .dl-cta::after {
+    transform: translateY(3px);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 59, 46, 0.96);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+  }
+
+  .lightbox.active { display: flex; }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--ink);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+
+  .lightbox-close:hover {
+    background: var(--terracotta);
+    color: var(--paper);
+    transform: rotate(90deg);
+  }
+
+  /* ===== SECTION BASE ===== */
+  section {
+    padding: 140px 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  @media (max-width: 900px) {
+    section { padding: 80px 24px; }
+  }
+
+  .section-label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .section-title {
+    font-family: var(--font-jp-serif);
+    font-size: clamp(36px, 5vw, 68px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    margin-bottom: 24px;
+  }
+
+  .section-title em {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  .section-lead {
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 640px;
+    color: var(--ink-soft);
+    margin-bottom: 72px;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about {
+    background: var(--paper-warm);
+    max-width: 100%;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .about-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .about-text p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+    color: var(--ink-soft);
+  }
+
+  .about-text p strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .about-pillars {
+    display: grid;
+    gap: 2px;
+    background: var(--ink);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .pillar {
+    background: var(--paper-warm);
+    padding: 36px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: background 0.3s;
+  }
+
+  .pillar:hover {
+    background: var(--paper);
+  }
+
+  .pillar-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--terracotta);
+    letter-spacing: 0.1em;
+    min-width: 40px;
+    padding-top: 8px;
+  }
+
+  .pillar-content h3 {
+    font-family: var(--font-jp-serif);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .pillar-content p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  /* ===== CURRICULUM SECTION ===== */
+  .curriculum-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 60px;
+    background: var(--paper-warm);
+    padding: 6px;
+    border-radius: 100px;
+    width: fit-content;
+  }
+
+  .tab {
+    padding: 12px 32px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.05em;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    font-family: inherit;
+  }
+
+  .tab.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 1100px) {
+    .curriculum-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 700px) {
+    .curriculum-grid { grid-template-columns: repeat(2, 1fr); }
+    .curriculum-tabs { width: 100%; }
+    .tab { flex: 1; padding: 12px 16px; }
+  }
+
+  .month-card {
+    background: var(--paper);
+    border: 1px solid var(--paper-dark);
+    padding: 28px 24px;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .month-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-4px);
+    border-color: var(--ink);
+  }
+
+  .month-card:hover .month-date,
+  .month-card:hover .month-sessions li {
+    color: var(--paper-warm);
+  }
+
+  .month-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+  }
+
+  .month-date {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--paper-dark);
+    font-family: var(--font-display);
+    transition: color 0.3s;
+  }
+
+  .month-card:hover .month-date {
+    border-color: rgba(245, 241, 232, 0.2);
+  }
+
+  .month-sessions {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .month-sessions li {
+    padding-left: 14px;
+    position: relative;
+    color: var(--ink);
+    transition: color 0.3s;
+  }
+
+  .month-sessions li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .month-sessions li.highlight {
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+
+  /* ===== COMPANIES SECTION ===== */
+  .companies-section {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: 100%;
+    padding-left: 48px;
+    padding-right: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .companies-section::before {
+    content: 'CASE STUDIES';
+    position: absolute;
+    top: 60px;
+    right: -30px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 160px;
+    font-weight: 300;
+    color: rgba(200, 122, 74, 0.08);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .companies-section .section-label { color: var(--terracotta); }
+  .companies-section .section-title { color: var(--paper); }
+  .companies-section .section-lead { color: var(--paper-warm); opacity: 0.85; }
+
+  .companies-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .featured-companies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(245, 241, 232, 0.15);
+    margin-top: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1000px) {
+    .featured-companies { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .company-case {
+    background: var(--ink);
+    padding: 36px 28px;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .company-case:hover {
+    background: var(--ink-soft);
+  }
+
+  .company-name {
+    font-family: var(--font-jp-serif);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--paper);
+  }
+
+  .company-topic {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--paper-warm);
+    opacity: 0.8;
+  }
+
+  .company-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--terracotta);
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+  }
+
+  /* ===== PRICING SECTION ===== */
+  .pricing {
+    background: var(--paper);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1000px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+
+  .price-card {
+    background: var(--paper-warm);
+    padding: 48px 40px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.4s;
+    border: 1px solid transparent;
+  }
+
+  .price-card.featured {
+    background: var(--ink);
+    color: var(--paper);
+    transform: scale(1.02);
+    box-shadow: 0 24px 60px rgba(11, 59, 46, 0.2);
+  }
+
+  .price-card.featured::before {
+    content: 'RECOMMENDED';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--terracotta);
+    color: var(--paper);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    padding: 6px 12px;
+    border-radius: 100px;
+  }
+
+  .price-label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+
+  .price-card.featured .price-label { color: var(--terracotta); }
+
+  .price-title {
+    font-family: var(--font-jp-serif);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .price-duration {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    font-family: var(--font-display);
+  }
+
+  .price-card.featured .price-duration { color: var(--paper-warm); opacity: 0.7; }
+
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .price-amount .currency {
+    font-family: var(--font-display);
+    font-size: 22px;
+  }
+
+  .price-amount .number {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .price-tax {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+  }
+
+  .price-card.featured .price-tax { color: var(--paper-warm); opacity: 0.6; }
+
+  .price-features {
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  .price-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(11, 59, 46, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .price-card.featured .price-features li {
+    border-color: rgba(245, 241, 232, 0.12);
+  }
+
+  .price-features li::before {
+    content: '✓';
+    color: var(--terracotta);
+    font-weight: 700;
+  }
+
+  .price-cta {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 100px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+
+  .price-card.featured .price-cta {
+    background: var(--terracotta);
+  }
+
+  .price-cta:hover {
+    background: var(--terracotta);
+    transform: translateY(-2px);
+  }
+
+  .price-card.featured .price-cta:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .price-note {
+    margin-top: 40px;
+    padding: 24px 32px;
+    background: var(--paper-warm);
+    border-left: 3px solid var(--terracotta);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+
+  .discount-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 800px) {
+    .discount-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .discount-item {
+    text-align: center;
+    padding: 20px;
+    background: var(--paper-warm);
+    border-radius: 6px;
+  }
+
+  .discount-item strong {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+  }
+
+  .discount-item span {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials {
+    background: var(--paper-warm);
+    max-width: 100%;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .testimonials-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 900px) {
+    .testimonial-grid { grid-template-columns: 1fr; }
+  }
+
+  .testimonial {
+    background: var(--paper);
+    padding: 44px 40px;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '“';
+    font-family: var(--font-display);
+    font-size: 96px;
+    line-height: 0.5;
+    color: var(--terracotta);
+    position: absolute;
+    top: 40px;
+    right: 32px;
+    font-style: italic;
+    opacity: 0.3;
+  }
+
+  .testimonial-quote {
+    font-family: var(--font-jp-serif);
+    font-size: 17px;
+    line-height: 1.95;
+    margin-bottom: 32px;
+    color: var(--ink);
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-author {
+    padding-top: 24px;
+    border-top: 1px solid var(--paper-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .testimonial-name {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .testimonial-role {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .testimonial-badge {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--terracotta);
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-section {
+    background: var(--paper);
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin-top: 40px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--paper-dark);
+    padding: 28px 0;
+    cursor: pointer;
+  }
+
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    font-family: var(--font-jp-serif);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: color 0.3s;
+  }
+
+  .faq-q-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+
+  .faq-q-text { flex: 1; }
+
+  .faq-toggle {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--ink);
+  }
+
+  .faq-toggle::before {
+    width: 12px;
+    height: 1px;
+  }
+
+  .faq-toggle::after {
+    width: 1px;
+    height: 12px;
+    transition: transform 0.3s;
+  }
+
+  .faq-item.open .faq-toggle::after {
+    transform: scaleY(0);
+  }
+
+  .faq-item.open .faq-toggle {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+
+  .faq-item.open .faq-toggle::before {
+    background: var(--paper);
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s, opacity 0.3s;
+    opacity: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    padding-left: 48px;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding-top: 20px;
+    opacity: 1;
+  }
+
+  /* ===== CTA FINAL ===== */
+  .cta-final {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: 100%;
+    padding: 140px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(200, 122, 74, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(184, 147, 74, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--terracotta);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .cta-title {
+    font-family: var(--font-jp-serif);
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .cta-title em {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  .cta-text {
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--paper-warm);
+    opacity: 0.9;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-hero {
+    background: var(--terracotta);
+    color: var(--paper);
+    padding: 22px 56px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--terracotta);
+  }
+
+  .btn-hero::after {
+    content: '→';
+    transition: transform 0.3s;
+  }
+
+  .btn-hero:hover {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  .btn-hero:hover::after { transform: translateX(6px); }
+
+  .btn-outline-light {
+    color: var(--paper);
+    border: 1px solid rgba(245, 241, 232, 0.3);
+    padding: 22px 40px;
+    border-radius: 100px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-outline-light:hover {
+    border-color: var(--paper);
+    background: rgba(245, 241, 232, 0.05);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--charcoal);
+    color: var(--paper-warm);
+    padding: 80px 48px 32px;
+  }
+
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(245, 241, 232, 0.1);
+  }
+
+  @media (max-width: 1100px) {
+    .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  .footer-brand {
+    font-family: var(--font-jp-serif);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--paper);
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    opacity: 0.7;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    color: var(--terracotta);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col a {
+    color: var(--paper-warm);
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+
+  .footer-col a:hover { opacity: 1; color: var(--paper); }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Decorative elements */
+  .bg-deco {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.04;
+  }
+
+  .bg-deco-1 {
+    top: 100px;
+    right: -100px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 280px;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+
+  /* ===== MEDIA HUB ===== */
+  .media-hub {
+    background: linear-gradient(180deg, #f8f3e9 0%, #efe6d4 100%);
+    max-width: 100%;
+    padding: 140px 48px;
+  }
+
+  @media (max-width: 900px) {
+    .media-hub { padding: 80px 24px; }
+  }
+
+  .media-hub-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .media-hub-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 32px;
+    align-items: start;
+    margin-top: 56px;
+  }
+
+  @media (max-width: 1100px) {
+    .media-hub-grid { grid-template-columns: 1fr; }
+  }
+
+  .media-sidebar {
+    display: grid;
+    gap: 24px;
+    position: sticky;
+    top: 110px;
+  }
+
+  @media (max-width: 1100px) {
+    .media-sidebar { position: static; }
+  }
+
+  .audio-showcase {
+    background: linear-gradient(145deg, rgba(11,59,46,0.98), rgba(17,73,59,0.95));
+    color: var(--paper);
+    padding: 34px 30px;
+    border-radius: 18px;
+    box-shadow: 0 28px 60px rgba(11,59,46,0.22);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .audio-showcase::before {
+    content: '';
+    position: absolute;
+    inset: auto -40px -40px auto;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(200,122,74,0.32) 0%, rgba(200,122,74,0) 72%);
+    pointer-events: none;
+  }
+
+  .audio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 14px;
+    border: 1px solid rgba(245,241,232,0.18);
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--paper-warm);
+    margin-bottom: 18px;
+  }
+
+  .audio-title {
+    font-family: var(--font-jp-serif);
+    font-size: 30px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .audio-lead {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(245,241,232,0.88);
+    margin-bottom: 22px;
+  }
+
+  .audio-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .audio-chip {
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(245,241,232,0.08);
+    border: 1px solid rgba(245,241,232,0.12);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--paper-warm);
+  }
+
+  .audio-panel {
+    background: rgba(245,241,232,0.08);
+    border: 1px solid rgba(245,241,232,0.12);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .audio-wave {
+    height: 72px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    background:
+      linear-gradient(90deg,
+        rgba(200,122,74,0.18) 0%, rgba(200,122,74,0.45) 8%, rgba(245,241,232,0.18) 8.5%,
+        rgba(245,241,232,0.18) 12%, rgba(184,147,74,0.5) 12.5%, rgba(184,147,74,0.18) 17%,
+        rgba(245,241,232,0.14) 18%, rgba(245,241,232,0.48) 24%, rgba(245,241,232,0.15) 24.5%,
+        rgba(245,241,232,0.15) 31%, rgba(200,122,74,0.42) 31.5%, rgba(200,122,74,0.16) 38%,
+        rgba(245,241,232,0.18) 39%, rgba(245,241,232,0.38) 47%, rgba(245,241,232,0.12) 48%,
+        rgba(184,147,74,0.18) 54%, rgba(184,147,74,0.48) 54.5%, rgba(184,147,74,0.15) 61%,
+        rgba(245,241,232,0.18) 62%, rgba(245,241,232,0.4) 69%, rgba(245,241,232,0.12) 70%,
+        rgba(200,122,74,0.46) 76%, rgba(200,122,74,0.17) 82%, rgba(245,241,232,0.18) 83%,
+        rgba(245,241,232,0.4) 89%, rgba(245,241,232,0.16) 90%, rgba(184,147,74,0.42) 96%, rgba(184,147,74,0.15) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .audio-wave::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(245,241,232,0.08) 47%, rgba(245,241,232,0.45) 50%, rgba(245,241,232,0.08) 53%, transparent 100%);
+  }
+
+  .audio-player {
+    width: 100%;
+    filter: sepia(20%) saturate(0.9) hue-rotate(-8deg);
+  }
+
+  .audio-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 999px;
+    background: var(--terracotta);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    border: 1px solid var(--terracotta);
+  }
+
+  .audio-download:hover {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  .media-note-card {
+    background: var(--paper);
+    border: 1px solid rgba(11,59,46,0.08);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 18px 45px rgba(11,59,46,0.08);
+  }
+
+  .media-note-card h3 {
+    font-family: var(--font-jp-serif);
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .media-note-card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  .media-note-card ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .media-note-card li::before {
+    content: '✓';
+    color: var(--terracotta);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .pdf-stage {
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(11,59,46,0.08);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 24px 60px rgba(11,59,46,0.12);
+  }
+
+  .pdf-stage-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .pdf-stage-title {
+    font-family: var(--font-jp-serif);
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .pdf-stage-sub {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+  }
+
+  .pdf-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    border: 1px solid rgba(11,59,46,0.14);
+    color: var(--ink);
+    background: var(--paper);
+  }
+
+  .pdf-btn:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .pdf-frame-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #133f32 0%, #0e3026 100%);
+    padding: 14px;
+  }
+
+  .pdf-frame-bar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 2px 4px 14px;
+  }
+
+  .pdf-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(245,241,232,0.28);
+  }
+
+  .pdf-dot:nth-child(1) { background: #d67d57; }
+  .pdf-dot:nth-child(2) { background: #d3a65b; }
+  .pdf-dot:nth-child(3) { background: #6a8d73; }
+
+  .pdf-iframe {
+    width: 100%;
+    height: 1080px;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .pdf-iframe { height: 78vh; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-brand-mark">S</div>
+    <span>サステナ経営塾</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#companies">Cases</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#downloads">Downloads</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">受講申込</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg-deco bg-deco-1">22</div>
+  <div class="hero-grid">
+    <div class="hero-main">
+      <div class="hero-meta">22<sup>nd</sup> Term · 2026 — 2027</div>
+      <h1 class="hero-title">
+        10カ月で、<br>
+        <em>サステナビリティ</em>を<br>
+        極める<span class="period"></span>
+      </h1>
+      <p class="hero-lead">
+        SDGs、ESG、CSR —— 「分かっているつもり」から、<strong>実務で動ける力</strong>へ。
+        2011年の開講以来、<strong>約700社950人</strong>が学んだ、日本で最も体系的なサステナ経営の学び舎。
+      </p>
+      <div class="hero-cta-group">
+        <a href="#cta" class="btn-primary">受講を申し込む</a>
+        <a href="#video" class="btn-secondary">映像で見る（6分）</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">700<span class="small">社</span></div>
+          <div class="label">累計受講企業</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">40<span class="small">コマ</span></div>
+          <div class="label">全カリキュラム</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">15<span class="small">年</span></div>
+          <div class="label">開講実績</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="quote-card">
+        <div class="quote-mark">“</div>
+        <p class="quote-text">
+          企業がまっとうな判断をしていけば、分断も避けられる。
+        </p>
+        <div class="quote-attribution">— 森 摂 / オルタナ代表取締役・創刊編集長</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item">トヨタ自動車</div>
+    <div class="marquee-item">三井物産</div>
+    <div class="marquee-item">味の素</div>
+    <div class="marquee-item">パナソニック</div>
+    <div class="marquee-item">ソニー</div>
+    <div class="marquee-item">キリン</div>
+    <div class="marquee-item">コクヨ</div>
+    <div class="marquee-item">ベネッセHD</div>
+    <div class="marquee-item">ANA</div>
+    <div class="marquee-item">日産自動車</div>
+    <div class="marquee-item">電通</div>
+    <div class="marquee-item">日立製作所</div>
+    <div class="marquee-item">ネスレ日本</div>
+    <div class="marquee-item">ライオン</div>
+    <div class="marquee-item">積水ハウス</div>
+    <div class="marquee-item">トヨタ自動車</div>
+    <div class="marquee-item">三井物産</div>
+    <div class="marquee-item">味の素</div>
+    <div class="marquee-item">パナソニック</div>
+    <div class="marquee-item">ソニー</div>
+    <div class="marquee-item">キリン</div>
+    <div class="marquee-item">コクヨ</div>
+    <div class="marquee-item">ベネッセHD</div>
+    <div class="marquee-item">ANA</div>
+    <div class="marquee-item">日産自動車</div>
+    <div class="marquee-item">電通</div>
+    <div class="marquee-item">日立製作所</div>
+    <div class="marquee-item">ネスレ日本</div>
+    <div class="marquee-item">ライオン</div>
+    <div class="marquee-item">積水ハウス</div>
+  </div>
+</div>
+
+<!-- VIDEO SECTION -->
+<section class="video-section" id="video">
+  <div class="section-label reveal">WATCH — VIDEO OVERVIEW</div>
+  <h2 class="section-title reveal">
+    映像で、<em>全体像</em>を掴む。
+  </h2>
+  <p class="section-lead reveal">
+    まずは映像で全体像をつかみ、その後に音声と15ページPDFで理解を深められる構成に整えました。
+  </p>
+
+  <div class="video-wrapper reveal">
+    <video
+      class="video-frame"
+      controls
+      preload="metadata"
+      poster=""
+      src="sustaina_overview.mp4">
+      お使いのブラウザは動画再生に対応していません。
+    </video>
+    <div class="video-caption">
+      <div>
+        <div class="video-caption-label">OVERVIEW VIDEO</div>
+        <div style="margin-top: 4px;">サステナ経営塾 第22期 徹底解説</div>
+      </div>
+      <div class="video-caption-meta">VIDEO · 960×540 · H.264</div>
+      <a href="sustaina_overview.m4a" download class="video-audio-link">音声のみDL →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA HUB -->
+<section class="media-hub" id="infographic">
+  <div class="media-hub-inner">
+    <div class="section-label reveal">MEDIA HUB — AUDIO & PDF</div>
+    <h2 class="section-title reveal">
+      見る、<em>聴く、読む。</em><br>
+      3つの導線で理解を深める。
+    </h2>
+    <p class="section-lead reveal">
+      プロ仕様の閲覧ゾーンとして再設計しました。左で約11分の音声をスマートに再生し、右で15ページのPDF資料をそのままLP内で確認できます。
+    </p>
+
+    <div class="media-hub-grid">
+      <div class="media-sidebar reveal">
+        <div class="audio-showcase">
+          <div class="audio-badge">AUDIO SESSION · ABOUT 11 MIN</div>
+          <h3 class="audio-title">音声解説を、<br>格好よく聴く。</h3>
+          <p class="audio-lead">
+            移動中や作業中でも内容を追えるよう、音声を専用カードで配置しました。動画を見る時間が取りづらい方でも、耳から全体像を把握できます。
+          </p>
+          <div class="audio-meta-row">
+            <span class="audio-chip">約11分</span>
+            <span class="audio-chip">M4A AUDIO</span>
+            <span class="audio-chip">スマホ再生対応</span>
+          </div>
+          <div class="audio-panel">
+            <div class="audio-wave"></div>
+            <audio class="audio-player" controls preload="metadata">
+              <source src="sustaina_overview.m4a" type="audio/mp4">
+              お使いのブラウザは音声再生に対応していません。
+            </audio>
+          </div>
+          <a href="sustaina_overview.m4a" download class="audio-download">音声ファイルをダウンロード</a>
+        </div>
+
+        <div class="media-note-card reveal">
+          <h3>このゾーンでできること</h3>
+          <p>
+            社内共有・稟議・比較検討に使いやすいよう、LPの中でそのまま資料確認できる構成にしています。
+          </p>
+          <ul>
+            <li>15ページPDFを iframe でスクロール閲覧</li>
+            <li>インフォグラフィック画像を1枚で確認</li>
+            <li>音声を約11分版に訂正して再配置</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pdf-stage reveal">
+        <div class="pdf-stage-head">
+          <div>
+            <div class="pdf-stage-sub">PDF BLUEPRINT VIEWER</div>
+            <h3 class="pdf-stage-title">サステナ経営塾 第22期 徹底解説ガイド<br>全15ページをLP内で表示</h3>
+          </div>
+          <div class="pdf-actions">
+            <a href="sustaina_blueprint.pdf" target="_blank" class="pdf-btn">別タブで開く</a>
+            <a href="sustaina_blueprint.pdf" download class="pdf-btn">PDFをダウンロード</a>
+            <a href="sustaina_infographic.png" download class="pdf-btn">画像を保存</a>
+          </div>
+        </div>
+
+        <div class="pdf-frame-wrap">
+          <div class="pdf-frame-bar">
+            <span class="pdf-dot"></span>
+            <span class="pdf-dot"></span>
+            <span class="pdf-dot"></span>
+          </div>
+          <iframe
+            class="pdf-iframe"
+            src="sustaina_blueprint.pdf#view=FitH"
+            title="サステナ経営塾 第22期 徹底解説ガイド PDF"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="infographic-image-wrapper" style="margin-top:24px; box-shadow:none; border:1px solid rgba(11,59,46,0.08);">
+          <img
+            src="sustaina_infographic.png"
+            alt="サステナ経営塾 第22期 インフォグラフィック"
+            class="infographic-image"
+            id="infographic-img"
+            loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="section-label reveal">ABOUT THE SCHOOL</div>
+    <h2 class="section-title reveal">
+      知識を<em>実装</em>に変える、<br>
+      10カ月のプログラム。
+    </h2>
+
+    <div class="about-grid" style="margin-top: 60px;">
+      <div class="about-text reveal">
+        <p>
+          2020年代、サステナブル経営に向けた動きは急速に広がっています。2050年カーボンニュートラル宣言、サプライチェーンの人権問題、ESG投資の拡大 —— <strong>企業経営の前提条件が書き換わっている</strong>今、「なんとなく分かる」では、もう通用しません。
+        </p>
+        <p>
+          サステナ経営塾は、<strong>「SDGs / ESG / CSR を体系的に理解する」</strong>だけでなく、企業の先進事例とグループワークを通じて<strong>「自社で実践・推進する」力</strong>を養う、10カ月完結のプログラムです。
+        </p>
+        <p>
+          2011年の「CSR部員塾」から始まり、「サステナビリティ部員塾」を経て、2023年から現在の姿へ。15年にわたり、<strong>日本企業のサステナ担当者を育ててきた老舗</strong>が、第22期を開講します。
+        </p>
+      </div>
+
+      <div class="about-pillars reveal">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div class="pillar-content">
+            <h3>体系的な講義</h3>
+            <p>最新動向を踏まえた40コマ。各分野の第一人者が、基礎から最前線まで伝授します。</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div class="pillar-content">
+            <h3>リアルな企業事例</h3>
+            <p>日立、トヨタ、キリン、コクヨ、ネスレなど、実践企業の担当者が成功と失敗を共有。</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div class="pillar-content">
+            <h3>実践ワークショップ</h3>
+            <p>アウトサイド・イン、人権課題洗い出し、統合報告書の相互チェックなど、自社に持ち帰る力を。</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <div class="pillar-content">
+            <h3>横のネットワーク</h3>
+            <p>業界を超えたサステナ担当者同士の、「共創できる仲間」との一生の出会い。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="section-label reveal">CURRICULUM — 22ND TERM</div>
+  <h2 class="section-title reveal">
+    10の月、40の講義。<br>
+    <em>体系化された</em>学びの地図。
+  </h2>
+  <p class="section-lead reveal">
+    月1回・終日のハイブリッド形式（会場／オンライン）。基礎理論 → 企業事例 → ワークショップの三位一体で、知識を実装へと落とし込みます。
+  </p>
+
+  <div class="curriculum-tabs reveal">
+    <button class="tab active" data-term="first">上期 / 初級編（5月〜9月）</button>
+    <button class="tab" data-term="second">下期 / 中級編（10月〜2月）</button>
+  </div>
+
+  <div class="curriculum-grid" id="term-first">
+    <div class="month-card reveal">
+      <div class="month-num">01</div>
+      <div class="month-date">5.20 WED</div>
+      <ul class="month-sessions">
+        <li>サステナ経営の基礎</li>
+        <li>検定3級ポイント解説</li>
+        <li>未理解点の洗い出しWS</li>
+        <li class="highlight">リコージャパン事例</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">02</div>
+      <div class="month-date">6.17 WED</div>
+      <ul class="month-sessions">
+        <li>NGO/NPO協働による価値創出</li>
+        <li>海洋プラ & サーキュラーエコノミー</li>
+        <li>統合思考・統合レポーティング</li>
+        <li class="highlight">レゾナック事例</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">03</div>
+      <div class="month-date">7.15 WED</div>
+      <ul class="month-sessions">
+        <li>脱炭素と企業戦略</li>
+        <li>SDGsアウトサイド・イン WS</li>
+        <li>新規ビジネス創出演習</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">04</div>
+      <div class="month-date">8.19 WED</div>
+      <ul class="month-sessions">
+        <li>企業のDEI推進</li>
+        <li class="highlight">アシックス事例</li>
+        <li>自社パーパス表現発表</li>
+        <li class="highlight">コクヨ事例</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">05</div>
+      <div class="month-date">9.16 WED</div>
+      <ul class="month-sessions">
+        <li>ビジネスと人権</li>
+        <li class="highlight">トヨタ事例（廃棄材アップサイクル）</li>
+        <li>検定3級過去問演習</li>
+        <li class="highlight">キリン事例（気候変動・自然資本）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="curriculum-grid" id="term-second" style="display:none;">
+    <div class="month-card reveal">
+      <div class="month-num">06</div>
+      <div class="month-date">10.14 WED</div>
+      <ul class="month-sessions">
+        <li class="highlight">ブリヂストン事例（サステナ人財）</li>
+        <li>国際NGOの活動を知る</li>
+        <li>人的資本経営とガバナンス</li>
+        <li class="highlight">NEC事例（TNFD）</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">07</div>
+      <div class="month-date">11.18 WED</div>
+      <ul class="month-sessions">
+        <li>SBT・CDP・ISSBなど国際イニシアティブ</li>
+        <li class="highlight">不二製油事例（パーム油調達）</li>
+        <li>人権課題洗い出しWS</li>
+        <li>NGO/NPOエンゲージメント</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">08</div>
+      <div class="month-date">12.16 WED</div>
+      <ul class="month-sessions">
+        <li class="highlight">ネスレ日本事例（CSV戦略）</li>
+        <li>サーキュラーエコノミー & 資源循環促進法</li>
+        <li class="highlight">SOMPO事例</li>
+        <li>マイパーパスの作り方WS</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">09</div>
+      <div class="month-date">1.20 WED</div>
+      <ul class="month-sessions">
+        <li>野心的な長期目標の設定</li>
+        <li>サスレポ相互チェックWS</li>
+        <li class="highlight">りそなAM事例（スチュワードシップ）</li>
+        <li class="highlight">積水ハウス事例</li>
+      </ul>
+    </div>
+    <div class="month-card reveal">
+      <div class="month-num">10</div>
+      <div class="month-date">2.17 WED</div>
+      <ul class="month-sessions">
+        <li>検定2級過去問演習</li>
+        <li>ESG情報開示とアンケート対策</li>
+        <li class="highlight">日立製作所事例</li>
+        <li>Q&A「今サステナ担当者に何が求められるか」</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIES / CASES -->
+<section class="companies-section" id="companies">
+  <div class="companies-inner">
+    <div class="section-label reveal">FEATURED CASE STUDIES</div>
+    <h2 class="section-title reveal">
+      登壇する、<em>実践企業</em>。
+    </h2>
+    <p class="section-lead reveal">
+      教科書にはない、現場のリアル。第一線で戦う担当者が、自社の戦略と葛藤を語ります。
+    </p>
+
+    <div class="featured-companies reveal">
+      <div class="company-case">
+        <div class="company-tag">MANUFACTURING</div>
+        <div class="company-name">リコージャパン</div>
+        <div class="company-topic">サステナビリティの社内浸透</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">CHEMICAL</div>
+        <div class="company-name">レゾナック</div>
+        <div class="company-topic">サステナ経営と価値創造の描き方</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">SPORTS</div>
+        <div class="company-name">アシックス</div>
+        <div class="company-topic">サステナビリティ経営</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">FURNITURE</div>
+        <div class="company-name">コクヨ</div>
+        <div class="company-topic">インクルーシブデザイン戦略</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">AUTOMOTIVE</div>
+        <div class="company-name">トヨタ自動車</div>
+        <div class="company-topic">廃棄材アップサイクルの挑戦</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">BEVERAGE</div>
+        <div class="company-name">キリン</div>
+        <div class="company-topic">気候変動・自然資本の統合開示</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">TIRE</div>
+        <div class="company-name">ブリヂストン</div>
+        <div class="company-topic">サステナ人財の育成</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">TECH</div>
+        <div class="company-name">NEC</div>
+        <div class="company-topic">自然資本/生物多様性とTNFD</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">FOOD</div>
+        <div class="company-name">不二製油</div>
+        <div class="company-topic">パーム油のサステナブル調達</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">FOOD</div>
+        <div class="company-name">ネスレ日本</div>
+        <div class="company-topic">CSV戦略</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">INSURANCE</div>
+        <div class="company-name">SOMPO</div>
+        <div class="company-topic">ステークホルダー対話のサステナ戦略</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">FINANCE</div>
+        <div class="company-name">りそなAM</div>
+        <div class="company-topic">スチュワードシップ戦略</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">HOUSING</div>
+        <div class="company-name">積水ハウス</div>
+        <div class="company-topic">サステナビリティ戦略概要</div>
+      </div>
+      <div class="company-case">
+        <div class="company-tag">TECH</div>
+        <div class="company-name">日立製作所</div>
+        <div class="company-topic">サステナ情報開示戦略</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-label reveal">INVESTMENT & SCHOLARSHIPS</div>
+  <h2 class="section-title reveal">
+    10カ月後のあなたへ、<br>
+    <em>投資する</em>。
+  </h2>
+  <p class="section-lead reveal">
+    通期・上期・下期、3つのプランから選べます。あなたの現在地に合わせて、最適な学びを。
+  </p>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-label">HALF — 上期のみ</div>
+      <h3 class="price-title">初級編</h3>
+      <div class="price-duration">2026.5 — 2026.9 · 全20コマ</div>
+      <div class="price-amount">
+        <span class="currency">¥</span>
+        <span class="number">217,800</span>
+      </div>
+      <div class="price-tax">税込 / 会場&オンライン</div>
+      <ul class="price-features">
+        <li>全20コマ出席 & アーカイブ</li>
+        <li>サステナ経営検定3級テキスト</li>
+        <li>検定3級受験料無料</li>
+        <li>グループワーク参加</li>
+      </ul>
+      <a href="#cta" class="price-cta">このプランで申し込む</a>
+    </div>
+
+    <div class="price-card featured reveal">
+      <div class="price-label">FULL — 通期</div>
+      <h3 class="price-title">上期 + 下期</h3>
+      <div class="price-duration">2026.5 — 2027.2 · 全40コマ</div>
+      <div class="price-amount">
+        <span class="currency">¥</span>
+        <span class="number">400,950</span>
+      </div>
+      <div class="price-tax">税込 / 会場&オンライン</div>
+      <ul class="price-features">
+        <li>全40コマ出席 & アーカイブ</li>
+        <li>検定3級 & 2級テキスト両方</li>
+        <li>検定3級 & 2級受験料無料</li>
+        <li><strong>「サステナ経営アドバイザー」資格</strong></li>
+        <li>森代表との個別面談30分</li>
+      </ul>
+      <a href="#cta" class="price-cta">このプランで申し込む</a>
+    </div>
+
+    <div class="price-card reveal">
+      <div class="price-label">HALF — 下期のみ</div>
+      <h3 class="price-title">中級編</h3>
+      <div class="price-duration">2026.10 — 2027.2 · 全20コマ</div>
+      <div class="price-amount">
+        <span class="currency">¥</span>
+        <span class="number">227,700</span>
+      </div>
+      <div class="price-tax">税込 / 会場&オンライン</div>
+      <ul class="price-features">
+        <li>全20コマ出席 & アーカイブ</li>
+        <li>サステナ経営検定2級テキスト</li>
+        <li>検定2級受験料無料</li>
+        <li>実務担当者向けワークショップ</li>
+      </ul>
+      <a href="#cta" class="price-cta">このプランで申し込む</a>
+    </div>
+  </div>
+
+  <div class="discount-grid reveal">
+    <div class="discount-item">
+      <strong>−5%</strong>
+      <span>早割（3月末締切）</span>
+    </div>
+    <div class="discount-item">
+      <strong>−15%</strong>
+      <span>複数名割</span>
+    </div>
+    <div class="discount-item">
+      <strong>−25%</strong>
+      <span>卒業生割</span>
+    </div>
+    <div class="discount-item">
+      <strong>−45%</strong>
+      <span>NGO/NPO割</span>
+    </div>
+  </div>
+
+  <div class="price-note reveal">
+    <strong>単発受講も可能</strong> — 1コマ12,100円から。4コマ回数券（45,980円）・10コマ回数券（111,320円）をご用意。オンライン参加のみのプランは、会場&オンラインプランより約15%お得です。
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="voice">
+  <div class="testimonials-inner">
+    <div class="section-label reveal">VOICES FROM GRADUATES</div>
+    <h2 class="section-title reveal">
+      受講生が、<em>得たもの</em>。
+    </h2>
+
+    <div class="testimonial-grid">
+      <div class="testimonial reveal">
+        <p class="testimonial-quote">
+          1年間を振り返ると、サステナビリティを担当領域ではなく企業の基盤として捉える意識が定着したと感じます。専門家の方々から先進的な事例を学び、「では自社はどうか？」と立ち返る思考が身につきました。卒業後の現在は、社内でサステナビリティ戦略を再構築する事業部横断の取り組みを進めています。
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">三島 のどか 様</div>
+          <div class="testimonial-role">株式会社マルイファシリティーズ<br>脱炭素推進部 再エネビジネス課</div>
+          <div class="testimonial-badge">— 21st Term</div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <p class="testimonial-quote">
+          毎月終日、会社を離れて勉強することで、新鮮な気持ちで楽しく受講できました。先進的な取組みをされている企業からの毎回の講義内容はとても刺激になり、またグループ討議で各社の課題をお聞きする中でもヒントが多くありました。企業としての責任をしっかり果たせるよう、追求し続けてまいります。
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">兵藤 郁子 様</div>
+          <div class="testimonial-role">あいおいニッセイ同和損害保険株式会社<br>取締役常務執行役員</div>
+          <div class="testimonial-badge">— 21st Term</div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <p class="testimonial-quote">
+          1回目は開発業務から異動して2年目で、ほぼ知識のない状態からの受講でした。その後、社内で推進活動に取り組む中で多くの悩みを抱え、2回目を受講。今回は点と点がつながり、サステナビリティ活動の意味が納得できたように思います。多くの企業の皆様とのつながりは私の大きな財産となりました。
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">井中 千草 様</div>
+          <div class="testimonial-role">東レエンジニアリング株式会社<br>サステナブル・エンジニアリング推進室 室長</div>
+          <div class="testimonial-badge">— 21st & 19th Term</div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <p class="testimonial-quote">
+          第一線で活躍する専門家による講義やグループワークを通じて、サステナビリティに関する最新の知識を習得し、自社の理念や取り組みを自らの言葉で説明する力を養うことができました。機関投資家として企業の方々と交流し、サステナ課題について議論を重ねることで、視野を広げる貴重な機会となりました。
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">鈴石 裕亮 様</div>
+          <div class="testimonial-role">りそなアセットマネジメント株式会社<br>責任投資部 インベストメント・マネージャー</div>
+          <div class="testimonial-badge">— 21st Term</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+  <div class="section-label reveal">RESOURCES — FREE DOWNLOAD</div>
+  <h2 class="section-title reveal">
+    社内共有用<em>資料</em>、<br>
+    ご自由にお持ち帰りください。
+  </h2>
+  <p class="section-lead reveal">
+    上司や同僚に共有するための3つの資料をご用意しました。受講検討の材料に、ぜひご活用ください。
+  </p>
+
+  <div class="download-grid">
+    <a href="sustaina_blueprint.pdf" download class="download-card reveal">
+      <div class="dl-icon">PDF</div>
+      <div class="dl-type">COMPREHENSIVE GUIDE</div>
+      <div class="dl-title">サステナ経営塾<br>徹底解説ガイドブック</div>
+      <div class="dl-desc">
+        15ページの完全ガイド。プログラムの哲学、カリキュラムの進行、アウトサイド・イン思考まで、ストーリー仕立てで解説。社内稟議に最適。
+      </div>
+      <div class="dl-meta">15 PAGES · 12 MB · PDF</div>
+      <div class="dl-cta">PDFをダウンロード</div>
+    </a>
+
+    <a href="sustaina_infographic.png" download class="download-card reveal">
+      <div class="dl-icon">IMG</div>
+      <div class="dl-type">ONE-PAGE SUMMARY</div>
+      <div class="dl-title">インフォグラフィック<br>（全体像1枚版）</div>
+      <div class="dl-desc">
+        プログラムの構造、料金、特典、学びの要素を1枚に凝縮。チーム共有やプレゼン資料への引用にどうぞ。
+      </div>
+      <div class="dl-meta">HIGH-RES · 847 KB · PNG</div>
+      <div class="dl-cta">画像をダウンロード</div>
+    </a>
+
+    <a href="sustaina_overview.m4a" download class="download-card reveal">
+      <div class="dl-icon">♪</div>
+      <div class="dl-type">AUDIO OVERVIEW</div>
+      <div class="dl-title">音声解説<br>（通勤中に聴ける版）</div>
+      <div class="dl-desc">
+        約11分の音声解説版。移動中や作業中でも、プログラム全体を耳からじっくり把握できます。
+      </div>
+      <div class="dl-meta">ABOUT 11 MIN · M4A</div>
+      <div class="dl-cta">音声をダウンロード</div>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label reveal">FREQUENTLY ASKED</div>
+  <h2 class="section-title reveal">
+    疑問を、<em>解く</em>。
+  </h2>
+
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.01</span>
+        <span class="faq-q-text">どのような方が対象ですか？</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">
+        上期は、着任後2年以内のサステナビリティ/ESG担当者、これからサステナ経営に力を入れていきたい管理職/経営層など、すべてのビジネスパーソンが対象です。下期は、着任後2年以上の担当者、すでに取り組んでいる管理職/経営層、上期受講者など、ある程度の知見がある方向けです。
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.02</span>
+        <span class="faq-q-text">サステナ経営検定との関係は？</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">
+        上期全受講で3級の公式テキスト（PDF）提供と2026年11月の3級受験が無料に。下期全受講で2級の公式テキストと2027年5月の2級受験が無料になります。累計受験者数は2万人超の、実績ある検定です。
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.03</span>
+        <span class="faq-q-text">「サステナ経営アドバイザー」とは？</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">
+        一般社団法人サステナ経営協会と株式会社オルタナが、通期（40コマ）修了者に付与する民間資格です。サステナ経営に関するアドバイザーに値するとし、下期終了後に認定証を授与します。
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.04</span>
+        <span class="faq-q-text">受講生同士の交流はありますか？</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">
+        各講義のグループディスカッションで、他社担当者と事例や悩みを共有できます。上期・下期に数回、事務局主催の懇親会も開催。業界を超えた「サステナ同期」との出会いは、卒業後も続く一生の財産になります。
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.05</span>
+        <span class="faq-q-text">オンラインだけでも受講できますか？</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">
+        はい。会場（シティラボ東京・京橋駅直結）とオンライン（Zoom）のハイブリッド開催で、オンラインのみのプランもあります。欠席時や復習用に、アーカイブ動画（期限付き）も配布されます。
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.06</span>
+        <span class="faq-q-text">各回のスケジュールは？</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">
+        月1回水曜日、10時10分〜17時30分（最終回のみ18時15分まで・修了式あり）。1日に4コマ（1コマ80分）、朝会やNGO/NPO事例紹介も含まれます。基本形式は、講義50分＋グループワーク15分＋全体セッション15分です。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="cta">
+  <div class="cta-inner">
+    <div class="cta-label">JOIN 22ND TERM — STARTING MAY 20, 2026</div>
+    <h2 class="cta-title">
+      10カ月後、<br>
+      <em>あなたは変わる。</em>
+    </h2>
+    <p class="cta-text">
+      サステナビリティを「理解している」から「実践している」へ。<br>
+      日本最大級のサステナ担当者コミュニティへ、ようこそ。
+    </p>
+    <div class="cta-buttons">
+      <a href="https://sus-buinjuku.alterna.co.jp/apply/" class="btn-hero">受講を申し込む</a>
+      <a href="https://sus-buinjuku.alterna.co.jp/inquiry/" class="btn-outline-light">まずは相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">サステナ経営塾</div>
+      <p class="footer-desc">
+        10カ月でサステナビリティ/ESGを極める、企業向けサステナ研修。<br>
+        2011年創設、累計約700社950人が受講。
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Program</h4>
+      <ul>
+        <li><a href="#about">サステナ経営塾とは</a></li>
+        <li><a href="#curriculum">カリキュラム</a></li>
+        <li><a href="#companies">企業事例</a></li>
+        <li><a href="#pricing">受講料</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#video">動画で見る</a></li>
+        <li><a href="#infographic">インフォグラフィック</a></li>
+        <li><a href="sustaina_blueprint.pdf" download>解説PDF DL</a></li>
+        <li><a href="sustaina_overview.m4a" download>音声版 DL</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#voice">卒業生の声</a></li>
+        <li><a href="#faq">よくあるご質問</a></li>
+        <li><a href="#cta">お申し込み</a></li>
+        <li><a href="https://sus-buinjuku.alterna.co.jp/inquiry/">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>株式会社オルタナ</li>
+        <li>オルタナ総研 サステナ経営塾事務局</li>
+        <li>csr(a)alterna.co.jp</li>
+        <li>東京都渋谷区東1-3-1</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 ALTERNA, INC. ALL RIGHTS RESERVED.</div>
+    <div>REDESIGNED LP · UNOFFICIAL CONCEPT</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="閉じる">×</button>
+  <img src="sustaina_infographic.png" alt="サステナ経営塾 インフォグラフィック 拡大表示">
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach((r) => observer.observe(r));
+
+  // Curriculum tabs
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      const term = tab.dataset.term;
+      document.getElementById('term-first').style.display = term === 'first' ? 'grid' : 'none';
+      document.getElementById('term-second').style.display = term === 'second' ? 'grid' : 'none';
+    });
+  });
+
+  // FAQ accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    const q = item.querySelector('.faq-q');
+    q.addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const infographicImg = document.getElementById('infographic-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  if (infographicImg) {
+    infographicImg.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lightboxClose) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
+  // Smooth scroll for nav
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
